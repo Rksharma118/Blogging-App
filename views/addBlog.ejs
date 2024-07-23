@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <%- include("./partials/head.ejs") %>
+    <title>Add Blog</title>
+    <style>
+      #title,#desc,#body {
+        background:transparent;
+        color: white;
+      }
+
+      .form-label{
+        color: white;
+        font-size: larger;
+      }
+      .btn{
+        background-color: maroon;
+        color: white;
+      }
+
+    </style>
+  </head>
+  <body>
+    <%- include("./partials/nav") %>
+    <div class="container mt-3">
+      <form action="/blog" method="post">
+        <div class="mb-3">
+          <label for="title" class="form-label">Title</label>
+          <input
+            name="title"
+            type="text"
+            class="form-control"
+            id="title"
+            aria-describedby="title"
+          />
+        </div>
+        <div class="mb-3">
+          <label for="desc" class="form-label">Description</label>
+          <input
+            name="desc"
+            type="text"
+            class="form-control"
+            id="desc"
+            aria-describedby="desc"
+          />
+        </div>
+        <div class="mb-3">
+          <label for="body" class="form-label">Body</label>
+          <textarea name="body" class="form-control" id="body"></textarea>
+        </div>
+        <div class="mb-3">
+          <input class="btn" type="submit" value="Submit" />
+        </div>
+      </form>
+    </div>
+    <%- include('./partials/script.ejs') %>
+  </body>
+</html>
